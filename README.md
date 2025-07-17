@@ -1,2 +1,4 @@
 # Modelo de detecção de fogo e fumaça
-Modelo de detecção de incêndios em florestas
+Modelo de detecção de incêndios em florestas 
+
+# Objetivo
