@@ -2,4 +2,5 @@
 Modelo de detecção de incêndios em florestas 
 
 # Objetivo
+Monitorar florestas para detectar incêndios ou focos
 
