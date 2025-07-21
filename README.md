@@ -8,4 +8,6 @@ Monitorar florestas para detectar incêndios ou focos
 
 # Resultados
 
+# Conclusão
+
 
