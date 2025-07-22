@@ -41,7 +41,7 @@ resultados = model.train(
 )
 ```
 ### Validação - Métricas  
-| Class | Images | Instances  | Box(P) |   R   | mAP50 | mAP50-95 |
+| Class | Images | Instances  | Box(P) | R     | mAP50 | mAP50-95 |
 |-------|-------:|-----------:|-------:|------:|------:|---------:|
 | all   |  571   |   1540     | 0.726  | 0.737 | 0.777 | 0.489    |
 | fire  |  317   |   912      | 0.688  | 0.734 | 0.747 | 0.405    |
