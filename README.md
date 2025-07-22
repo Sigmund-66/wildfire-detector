@@ -12,16 +12,16 @@ Universe](https://universe.roboflow.com/)
 
 YOLO (You Only Look Once), é um modelo popular de detecção de objetos e segmentação de imagens desenvolvido por Joseph Redmon e Ali Farhadi na Universidade de Washington. Lançado em 2015, o YOLO ganhou popularidade por sua alta velocidade e precisão. Abaixo uma lista das versões já lançadas do YOLO e seu ano de lançamento.
 
-+O YOLOv2, lançado em 2016, aprimorou o modelo original incorporando normalização em lote, caixas delimitadoras (anchor boxes) e agrupamentos de dimensões.
-+YOLOv3, lançado em 2018, aprimorou ainda mais o desempenho do modelo usando uma rede de backbone mais eficiente, múltiplas âncoras e agrupamento de pirâmide espacial.
-+O YOLOv4 foi lançado em 2020, introduzindo inovações como aumento de dados Mosaic, um novo cabeçalho de detecção sem âncora e uma nova função de perda.
-+YOLOv5 melhorou ainda mais o desempenho do modelo e adicionou novos recursos, como otimização de hiperparâmetros, rastreamento de experimentos integrado e exportação automática para formatos de exportação populares.
-+YOLOv6 foi tornado de código aberto pela Meituan em 2022 e é usado em muitos dos robôs de entrega autônomos da empresa.
-+O YOLOv7 adicionou tarefas adicionais, como estimativa de pose no conjunto de dados de pontos-chave COCO.
++ O YOLOv2, lançado em 2016, aprimorou o modelo original incorporando normalização em lote, caixas delimitadoras (anchor boxes) e agrupamentos de dimensões.
++ YOLOv3, lançado em 2018, aprimorou ainda mais o desempenho do modelo usando uma rede de backbone mais eficiente, múltiplas âncoras e agrupamento de pirâmide espacial.
++ O YOLOv4 foi lançado em 2020, introduzindo inovações como aumento de dados Mosaic, um novo cabeçalho de detecção sem âncora e uma nova função de perda.
++ YOLOv5 melhorou ainda mais o desempenho do modelo e adicionou novos recursos, como otimização de hiperparâmetros, rastreamento de experimentos integrado e exportação automática para formatos de exportação populares.
++ YOLOv6 foi tornado de código aberto pela Meituan em 2022 e é usado em muitos dos robôs de entrega autônomos da empresa.
++ O YOLOv7 adicionou tarefas adicionais, como estimativa de pose no conjunto de dados de pontos-chave COCO.
 +YOLOv8 lançado em 2023 pela Ultralytics, introduziu novos recursos e melhorias para desempenho, flexibilidade e eficiência aprimorados, oferecendo suporte a uma gama completa de tarefas de visão de IA.
-+O YOLOv9 introduz métodos inovadores como Programmable Gradient Information (PGI) e Generalized Efficient Layer Aggregation Network (GELAN).
-+O YOLOv10 criado por pesquisadores da Universidade de Tsinghua usando o pacote Python Ultralytics, fornece avanços de detecção de objetos em tempo real, introduzindo um cabeçalho End-to-End que elimina os requisitos de Supressão Não Máxima (NMS).
-+YOLO11 (mais novo): Os modelos YOLO mais recentes da Ultralytics oferecem desempenho de última geração (SOTA) em várias tarefas, incluindo detecção de objetos, segmentação, estimativa de pose, rastreamento e classificação, aproveitando os recursos em diversas aplicações e domínios de IA.
++ O YOLOv9 introduz métodos inovadores como Programmable Gradient Information (PGI) e Generalized Efficient Layer Aggregation Network (GELAN).
++ O YOLOv10 criado por pesquisadores da Universidade de Tsinghua usando o pacote Python Ultralytics, fornece avanços de detecção de objetos em tempo real, introduzindo um cabeçalho End-to-End que elimina os requisitos de Supressão Não Máxima (NMS).
++ YOLO11 (mais novo): Os modelos YOLO mais recentes da Ultralytics oferecem desempenho de última geração (SOTA) em várias tarefas, incluindo detecção de objetos, segmentação, estimativa de pose, rastreamento e classificação, aproveitando os recursos em diversas aplicações e domínios de IA.
 
 ## Sobre o Roboflow
 
