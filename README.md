@@ -14,10 +14,10 @@ Os resultados foram obtidos fazendo dois treinameinos distintos, sendo o segundo
 os pesos do primeiro utilizando a técnica do fine-tuning (treino contínuo). O segundo se saiu melhor do primeiro visto que além de utilizar os pesos do anterior também contou com um dataset mais robusto.
 
 ## Treinamento 1
-**Configuração da máquina**
-**Dataset utilizado**
-**Modelo YOLOv11**
-**Código do treino**
+**Configuração da máquina**  
+**Dataset utilizado**  
+**Modelo YOLOv11**  
+**Código do treino**  
 
 `model = YOLO("yolo11s.pt")
 
