@@ -62,6 +62,41 @@ resultados = model.train(
 
 ## Treinamento 2
 
+**🖥️Configuração da máquina:** 
++ Ambiente de execução Google Colab Tesla (T4) 
++ RAM do sistema 12.7GB 
++ RAM da GPU 15GB  
++ Disco 112.6GB
+     
+**Dataset utilizado:**  
+🚬 **smoke Dataset** — por *smoke*, publicado no [Roboflow Universe](https://universe.roboflow.com/smoke-3mr5d/smoke-thgo9), maio de 2025. Visitado em 18 de julho de 2025.  
+**Modelo YOLOv11:** Modelo gerado no treinamento 1    
+**Código do treino:**  
+
+```
+
+model = YOLO("best.pt")
+
+resultados = model.train(
+    data="/content/drive/MyDrive/smoke.v1i.yolov11/data.yaml",\
+    epochs=70,
+    patience=40,
+    imgsz=640,
+    pretrained=True,
+    hsv_v=0.6,
+    hsv_h=0.015,
+    hsv_s=0.7,
+    degrees=5.0,
+    shear=2.0,
+    perspective=0.001,
+    scale=0.5,
+    mosaic=0.0,
+    mixup=0.0,
+)
+
+
+```
+
 
 
 # :dart:Conclusão
