@@ -3,22 +3,22 @@ Modelo de detecção de incêndios em florestas
 
 
 
-# <img width="32" height="32" alt="20733653371681985287-48" src="https://github.com/user-attachments/assets/766a5cfe-16f5-481e-b07c-a1f8e16145b5" />  Sobre
+# :clipboard:Sobre
 
 
-# :pushpin: Objetivo
+# :pushpin:Objetivo
 Monitorar florestas para detectar incêndios ou focos para adotar estratégias de combate e prevenção.
 
-# Como usar
+# :question:Como usar
 
-# Resultados
+# :bar_chart:Resultados
 Os resultados foram obtidos fazendo dois treinameinos distintos, sendo o segundo realizado com 
 os pesos do primeiro utilizando a técnica do fine-tuning (treino contínuo). O segundo se saiu melhor do primeiro visto que além de utilizar os pesos do anterior também contou com um dataset mais robusto.
 
 ## Treinamento 1
 **Configuração da máquina:**  
 **Dataset utilizado:**  
-🔥 **fire-smoke data Dataset** — por *me*, publicado no [Roboflow Universe](https://universe.roboflow.com/me-p4nto/fire-smoke-data), junho de 2025. Visitado em 18 de julho de 2025.  
+:fire: **fire-smoke data Dataset** — por *me*, publicado no [Roboflow Universe](https://universe.roboflow.com/me-p4nto/fire-smoke-data), junho de 2025. Visitado em 18 de julho de 2025.  
 **Modelo YOLOv11:** `yolo11s.pt`  
 **Código do treino:**  
 
@@ -54,6 +54,6 @@ resultados = model.train(
 
 
 
-# Conclusão
+# :dart:Conclusão
 
 
