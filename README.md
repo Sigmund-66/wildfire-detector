@@ -10,7 +10,7 @@ Universe](https://universe.roboflow.com/)
 
 ### Sobre o YOLO
 
-YOLO (You Only Look Once), é um modelo popular de detecção de objetos e segmentação de imagens desenvolvido por Joseph Redmon e Ali Farhadi na Universidade de Washington. Lançado em 2015, o YOLO ganhou popularidade por sua alta velocidade e precisão. Abaixo uma lista das versões já lançadas do YOLO e seu ano de lançamento.
+YOLO **(You Only Look Once)**, é um modelo popular de detecção de objetos e segmentação de imagens desenvolvido por Joseph Redmon e Ali Farhadi na Universidade de Washington. Lançado em 2015, o YOLO ganhou popularidade por sua alta velocidade e precisão. Abaixo uma lista das versões já lançadas do YOLO e seu ano de lançamento.
 
 + O YOLOv2, lançado em 2016, aprimorou o modelo original incorporando normalização em lote, caixas delimitadoras (anchor boxes) e agrupamentos de dimensões.
 + YOLOv3, lançado em 2018, aprimorou ainda mais o desempenho do modelo usando uma rede de backbone mais eficiente, múltiplas âncoras e agrupamento de pirâmide espacial.
@@ -23,7 +23,7 @@ YOLO (You Only Look Once), é um modelo popular de detecção de objetos e segme
 + O YOLOv10 criado por pesquisadores da Universidade de Tsinghua usando o pacote Python Ultralytics, fornece avanços de detecção de objetos em tempo real, introduzindo um cabeçalho End-to-End que elimina os requisitos de Supressão Não Máxima (NMS).
 + YOLO11 (mais novo): Os modelos YOLO mais recentes da Ultralytics oferecem desempenho de última geração (SOTA) em várias tarefas, incluindo detecção de objetos, segmentação, estimativa de pose, rastreamento e classificação, aproveitando os recursos em diversas aplicações e domínios de IA.
 
-## Sobre o Roboflow
+### Sobre o Roboflow
 
 
 # :pushpin:Objetivo
