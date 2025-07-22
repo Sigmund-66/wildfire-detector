@@ -69,10 +69,34 @@ resultados = model.train(
 |-------|-------:|-----------:|-------:|------:|------:|---------:|
 | all   |  571   |   1540     | 0.726  | 0.737 | 0.777 | 0.489    |
 | fire  |  317   |   912      | 0.688  | 0.734 | 0.747 | 0.405    |
-| smoke |  447   |   628      | 0.764  | 0.739 | 0.806 | 0.573    |
+| smoke |  447   |   628      | 0.764  | 0.739 | 0.806 | 0.573    |  
+
+### Explicação das métricas
+| Métrica | O que significa                                                                                         |
+|---------|---------------------------------------------------------------------------------------------------------|
+| Class   | Quantidade de classes que podme ser detectadas na imagem. Definidas no arquivo **data.yaml** do dataset.|
+| Images  | Número de imagens usadas na validação (571 imagens).                                                    |
+|Instances| Quantidade total de objetos rotulados no conjunto (1540 no total).                                      |
+| Box(P)  | Precisão (Precision): proporção de predições corretas entre todas as predições feitas.                  |
+| R       | Recall: proporção de objetos reais detectados corretamente pelo modelo.                                 |                            
+| mAP50   | Média da precisão (AP) com IoU ≥ 0.50 — principal métrica usada para comparar modelos.                  |
+| mAP50-95| Média da precisão em múltiplos thresholds de IoU (de 0.50 a 0.95 com passo de 0.05) —  métrica mais rigorosa e completa da COCO.|
+
+**Todas as classes (desempenho geral)**
+O modelo apresenta equilíbrio entre precisão e recall, e um **mAP@0.5 = 77.7%**, indicando boa qualidade nas detecções com sobreposição de pelo menos 50%. O **mAP@0.5:0.95** = 48.9% mostra que o desempenho diminui com limiares de IoU mais altos, o que é esperado.
+
+**Classe fire**
+O modelo detecta bem o fogo, mas com precisão um pouco inferior à de smoke. Seu **mAP50-95 (40.5%)** e sugere que a detecção de fire é menos precisa nos limites de bounding box, ou tem variação maior nos dados.
+
+**Classe smoke**
+A classe smoke tem o melhor desempenho geral. A **precisão** de **76.4%** e **mAP50** de **80.6%** indicam que o modelo é muito confiável para detectar fumaça.
+O **mAP50-95** também é alto **(57.3%)**, o que mostra bom alinhamento das caixas preditas com as caixas reais mesmo em limiares mais rigorosos.
+
 
 ### Gráfico F1 confidence curve
-<img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/26528de3-fdc8-491e-bd4c-d58fb0865de1" />
+<img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/26528de3-fdc8-491e-bd4c-d58fb0865de1" />  
+
+Esse gráfico é uma curva F1-Confidence gerado após o término do treinamento do modelo e localizada em `runs/detect/train`. Ele mostra como o valor F1-score varia em função do nível de confiança aplicado para filtrar as detecções do modelo.
 
 ### Gráfico curve Precision x Recall
 <img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/9ce5c943-a25c-4b74-8374-71f89960c56e" />
@@ -102,7 +126,6 @@ resultados = model.train(
     epochs=70,
     patience=40,
     imgsz=640,
-    pretrained=True,
     hsv_v=0.6,
     hsv_h=0.015,
     hsv_s=0.7,
