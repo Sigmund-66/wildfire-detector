@@ -16,19 +16,9 @@ os pesos do primeiro utilizando a técnica do fine-tuning (treino contínuo). O 
 ## Treinamento 1
 **Configuração da máquina**  
 **Dataset utilizado:**  
-@misc{
-    fire-smoke-data_dataset,
-    title = { fire-smoke data Dataset },
-    type = { Open Source Dataset },
-    author = { me },
-    howpublished = { \url{ https://universe.roboflow.com/me-p4nto/fire-smoke-data } },
-    url = { https://universe.roboflow.com/me-p4nto/fire-smoke-data },
-    journal = { Roboflow Universe },
-    publisher = { Roboflow },
-    year = { 2025 },
-    month = { jun },
-    note = { visited on 2025-07-22 },
-}  
+
+🔥 **fire-smoke data Dataset** — por *me*, publicado no [Roboflow Universe](https://universe.roboflow.com/me-p4nto/fire-smoke-data), junho de 2025. Visitado em 18 de julho de 2025.  
+
 **Modelo YOLOv11:** `yolo11s.pt`  
 **Código do treino**  
 
