@@ -14,13 +14,11 @@ Os resultados foram obtidos fazendo dois treinameinos distintos, sendo o segundo
 os pesos do primeiro utilizando a técnica do fine-tuning (treino contínuo). O segundo se saiu melhor do primeiro visto que além de utilizar os pesos do anterior também contou com um dataset mais robusto.
 
 ## Treinamento 1
-**Configuração da máquina**  
+**Configuração da máquina:**  
 **Dataset utilizado:**  
-
 🔥 **fire-smoke data Dataset** — por *me*, publicado no [Roboflow Universe](https://universe.roboflow.com/me-p4nto/fire-smoke-data), junho de 2025. Visitado em 18 de julho de 2025.  
-
 **Modelo YOLOv11:** `yolo11s.pt`  
-**Código do treino**  
+**Código do treino:**  
 
 ```
 model = YOLO("yolo11s.pt")
