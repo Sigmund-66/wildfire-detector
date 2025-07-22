@@ -2,8 +2,8 @@
 Modelo de detecção de incêndios em florestas 
 
 
-<img width="48" height="48" alt="20733653371681985287-48" src="https://github.com/user-attachments/assets/766a5cfe-16f5-481e-b07c-a1f8e16145b5" /> 
-# Sobre
+
+# <img width="48" height="48" alt="20733653371681985287-48" src="https://github.com/user-attachments/assets/766a5cfe-16f5-481e-b07c-a1f8e16145b5" />  Sobre
 
 
 # Objetivo
