@@ -21,11 +21,12 @@ os pesos do primeiro utilizando a técnica do fine-tuning (treino contínuo). O 
 
 ```
 model = YOLO("yolo11s.pt")
+
 resultados = model.train(
     data="/content/drive/MyDrive/fire-smoke_data.v3i.yolov11/data.yaml",\
     epochs=120,
     patience=40,
-    imgsz=640,\
+    imgsz=640,
     pretrained=True,
     batch=8,
     hsv_v=0.5,
@@ -35,6 +36,7 @@ resultados = model.train(
     mixup=0.0,
 )
 ```
+### Validação - Métricas
 
 ### Gráfico F1 confidence curve
 <img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/26528de3-fdc8-491e-bd4c-d58fb0865de1" />
