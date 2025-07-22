@@ -6,7 +6,7 @@ Modelo de detecção de incêndios em florestas
 # <img width="32" height="32" alt="20733653371681985287-48" src="https://github.com/user-attachments/assets/766a5cfe-16f5-481e-b07c-a1f8e16145b5" />  Sobre
 
 
-# Objetivo
+# :pushpin: Objetivo
 Monitorar florestas para detectar incêndios ou focos para adotar estratégias de combate e prevenção.
 
 # Como usar
