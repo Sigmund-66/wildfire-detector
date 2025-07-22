@@ -16,7 +16,7 @@ os pesos do primeiro utilizando a técnica do fine-tuning (treino contínuo). O 
 ## Treinamento 1
 **Configuração da máquina**  
 **Dataset utilizado**  
-**Modelo YOLOv11**  
+**Modelo YOLOv11:** `yolo11s.pt`  
 **Código do treino**  
 
 ```
