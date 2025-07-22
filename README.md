@@ -17,6 +17,7 @@ os pesos do primeiro utilizando a técnica do fine-tuning (treino contínuo). O 
 
 ## Treinamento 1
 **Configuração da máquina:**  
+Ambiente de execução Google Tesla (T4) - RAM do sistema 12.7GB - RAM da GPU 15GB - Disco 112.6GB  
 **Dataset utilizado:**  
 :fire: **fire-smoke data Dataset** — por *me*, publicado no [Roboflow Universe](https://universe.roboflow.com/me-p4nto/fire-smoke-data), junho de 2025. Visitado em 18 de julho de 2025.  
 **Modelo YOLOv11:** `yolo11s.pt`  
@@ -39,7 +40,12 @@ resultados = model.train(
     mixup=0.0,
 )
 ```
-### Validação - Métricas
+### Validação - Métricas  
+| Class | Images | Instances  | Box(P) |   R   | mAP50 | mAP50-95 |
+|-------|-------:|-----------:|-------:|------:|------:|---------:|
+| all   |  571   |   1540     | 0.726  | 0.737 | 0.777 | 0.489    |
+| fire  |  317   |   912      | 0.688  | 0.734 | 0.747 | 0.405    |
+| smoke |  447   |   628      | 0.764  | 0.739 | 0.806 | 0.573    |
 
 ### Gráfico F1 confidence curve
 <img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/26528de3-fdc8-491e-bd4c-d58fb0865de1" />
