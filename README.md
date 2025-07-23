@@ -14,8 +14,7 @@ YOLO **(You Only Look Once)**, é um modelo popular de detecção de objetos e s
 + O YOLOv2, lançado em 2016, aprimorou o modelo original incorporando normalização em lote, caixas delimitadoras (anchor boxes) e agrupamentos de dimensões.
 + YOLOv3, lançado em 2018, aprimorou ainda mais o desempenho do modelo usando uma rede de backbone mais eficiente, múltiplas âncoras e agrupamento de pirâmide espacial.
 + O YOLOv4 foi lançado em 2020, introduzindo inovações como aumento de dados Mosaic, um novo cabeçalho de detecção sem âncora e uma nova função de perda.
-+ YOLOv5 melhorou ainda mais o desempenho do modelo e adicionou novos recursos, como otimização de hiperparâmetros, rastreamento de experimentos integrado e exportação automática para formatos de exportação popul![val_batch0_labels](https://github.com/user-attachments/assets/c5c480c0-edac-48d6-9829-9bfd57682cbf)
-ares.
++ YOLOv5 melhorou ainda mais o desempenho do modelo e adicionou novos recursos, como otimização de hiperparâmetros, rastreamento de experimentos integrado e exportação automática para formatos de exportação populares.
 + YOLOv6 foi tornado de código aberto pela Meituan em 2022 e é usado em muitos dos robôs de entrega autônomos da empresa.
 + O YOLOv7 adicionou tarefas adicionais, como estimativa de pose no conjunto de dados de pontos-chave COCO.
 +YOLOv8 lançado em 2023 pela Ultralytics, introduziu novos recursos e melhorias para desempenho, flexibilidade e eficiência aprimorados, oferecendo suporte a uma gama completa de tarefas de visão de IA.
@@ -113,17 +112,17 @@ O **mAP50-95** também é alto **(57.3%)**, o que mostra bom alinhamento das cai
 
 Esse gráfico é uma curva F1-Confidence gerado após o término do treinamento do modelo e localizada em `runs/detect/train`. Ele mostra como o valor F1-score varia em função do nível de confiança aplicado para filtrar as detecções do modelo.
 
-+O eixo X (Confidence): representa o limiar de confiança utilizado nas predições. Valores variam de 0 a 1.Quanto mais alto o limiar, mais exigente o modelo é para 
++ O eixo X (Confidence): representa o limiar de confiança utilizado nas predições. Valores variam de 0 a 1.Quanto mais alto o limiar, mais exigente o modelo é para 
   considerar uma detecção como válida.Quanto mais baixo, mais permissivo (aceita mais detecções, mesmo com baixa confiança).
 
-+O eixo Y (F1): representa o valor do F1-score, que é a média harmônica entre precisão (precision) e revocação (recall).Valores mais altos indicam melhor equilíbrio 
++ O eixo Y (F1): representa o valor do F1-score, que é a média harmônica entre precisão (precision) e revocação (recall).Valores mais altos indicam melhor equilíbrio 
   entre precisão e recall.
 
-+O pico do F1-score geral (azul grosso) ocorre aproximadamente no ponto 0.317 de confiança, com um valor de F1 = 0.73.Isso significa que o melhor equilíbrio entre 
++ O pico do F1-score geral (azul grosso) ocorre aproximadamente no ponto 0.317 de confiança, com um valor de F1 = 0.73.Isso significa que o melhor equilíbrio entre 
   precisão e recall é atingido quando o modelo considera apenas detecções com confiança acima de 31.7%.
 
-+A curva da classe smoke (laranja) apresenta desempenho superior à de fire (azul claro), mantendo valores de F1 mais altos em toda a faixa de confiança.
-+A curva fire tem uma queda mais acentuada em valores altos de confiança, indicando que o modelo se torna excessivamente seletivo e perde recall rapidamente nessa classe.
++ A curva da classe smoke (laranja) apresenta desempenho superior à de fire (azul claro), mantendo valores de F1 mais altos em toda a faixa de confiança.
++ A curva fire tem uma queda mais acentuada em valores altos de confiança, indicando que o modelo se torna excessivamente seletivo e perde recall rapidamente nessa classe.
 
 
 ### Gráfico curve Precision x Recall
