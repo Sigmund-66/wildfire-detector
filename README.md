@@ -39,8 +39,7 @@ Trata-se de um repositório público onde pesquisadores, desenvolvedores, estuda
 Os incêndios florestais têm consequências devastadoras para o meio ambiente, a saúde humana e a economia. 
 Sistemas baseados em visão computacional e inteligência artificial conseguem identificar sinais de fumaça 
 ou chamas em tempo real, por meio de câmeras ou imagens de satélite. A resposta rápida evita que pequenos focos virem grandes incêndios.
-Para isso a ideia de criar um modelo de detecção de objetos para monitorar florestas, detectar incêndios ou focos e adotar estratégias de combate e prevenção
-o mais rapidamente.
+Para isso a ideia de criar um modelo de detecção de objetos para monitorar florestas, detectar incêndios ou focos e adotar estratégias de combate e prevenção mais rapidamente.
 
 # :question:Como usar
 ### Escolha entre os dois modelos localizados em:
