@@ -82,13 +82,13 @@ resultados = model.train(
 | mAP50   | Média da precisão (AP) com IoU ≥ 0.50 — principal métrica usada para comparar modelos.                  |
 | mAP50-95| Média da precisão em múltiplos thresholds de IoU (de 0.50 a 0.95 com passo de 0.05) —  métrica mais rigorosa e completa da COCO.|
 
-**Todas as classes (desempenho geral)**
+**Todas as classes (desempenho geral):**
 O modelo apresenta equilíbrio entre precisão e recall, e um **mAP@0.5 = 77.7%**, indicando boa qualidade nas detecções com sobreposição de pelo menos 50%. O **mAP@0.5:0.95** = 48.9% mostra que o desempenho diminui com limiares de IoU mais altos, o que é esperado.
 
-**Classe fire**
+**Classe fire:**
 O modelo detecta bem o fogo, mas com precisão um pouco inferior à de smoke. Seu **mAP50-95 (40.5%)** e sugere que a detecção de fire é menos precisa nos limites de bounding box, ou tem variação maior nos dados.
 
-**Classe smoke**
+**Classe smoke:**
 A classe smoke tem o melhor desempenho geral. A **precisão** de **76.4%** e **mAP50** de **80.6%** indicam que o modelo é muito confiável para detectar fumaça.
 O **mAP50-95** também é alto **(57.3%)**, o que mostra bom alinhamento das caixas preditas com as caixas reais mesmo em limiares mais rigorosos.
 
@@ -98,11 +98,42 @@ O **mAP50-95** também é alto **(57.3%)**, o que mostra bom alinhamento das cai
 
 Esse gráfico é uma curva F1-Confidence gerado após o término do treinamento do modelo e localizada em `runs/detect/train`. Ele mostra como o valor F1-score varia em função do nível de confiança aplicado para filtrar as detecções do modelo.
 
++O eixo X (Confidence): representa o limiar de confiança utilizado nas predições. Valores variam de 0 a 1.
+Quanto mais alto o limiar, mais exigente o modelo é para considerar uma detecção como válida.
+Quanto mais baixo, mais permissivo (aceita mais detecções, mesmo com baixa confiança).
+
++O eixo Y (F1): representa o valor do F1-score, que é a média harmônica entre precisão (precision) e revocação (recall).
+Valores mais altos indicam melhor equilíbrio entre precisão e recall.
+
++O pico do F1-score geral (azul grosso) ocorre aproximadamente no ponto 0.317 de confiança, com um valor de F1 = 0.73.
+Isso significa que o melhor equilíbrio entre precisão e recall é atingido quando o modelo considera apenas detecções com confiança acima de 31.7%.
+
++A curva da classe smoke (laranja) apresenta desempenho superior à de fire (azul claro), mantendo valores de F1 mais altos em toda a faixa de confiança.
+
++A curva fire tem uma queda mais acentuada em valores altos de confiança, indicando que o modelo se torna excessivamente seletivo e perde recall rapidamente nessa classe.
+
+
 ### Gráfico curve Precision x Recall
 <img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/9ce5c943-a25c-4b74-8374-71f89960c56e" />
 
-### Matriz confusão normalizada
+### Matriz confusão normalizada (gráfico)
 <img width="2250" height="1500" alt="confusion_matrix_normalized" src="https://github.com/user-attachments/assets/e113552a-4ba9-4c1f-9fee-6ab9ed38fadc" />
+
+### Interpretação da matriz
+
++Classe fire (linha 1):
+81% das previsões como fire foram corretas. 2% das previsões como fire na verdade eram smoke.
+74% das vezes que o modelo deveria prever background, ele errou e previu fire — indicando falsos positivos com fire.
+
++Classe smoke (linha 2):
+77% das previsões como smoke foram corretas.
+3% na verdade eram fire. 26% das vezes que o modelo deveria prever background, ele previu smoke.
+
++Classe background (linha 3):16% das previsões como background eram na verdade fire.
+21% eram smoke e 63% {1 - (0.16 + 0.21)} eram de fato o background.  
+
+O modelo está apresentando muitos falsos positivos para fire principalmente com o background (74%), apesar de ter uma boa precisão. A classe smoke teve o melhor desempenho, porém ainda se confunde um pouco com background(26%).
+
 
 ## Treinamento 2
 
