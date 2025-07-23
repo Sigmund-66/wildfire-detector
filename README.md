@@ -44,7 +44,20 @@ o mais rapidamente.
 
 # :question:Como usar
 ### Escolha entre os dois modelos localizados em:
-+ 
++ `dados_treinamento/Yolo-train/treino1/runs/detect/train/weights/best.pt` ou `dados_treinamento/Yolo-train/treino%202/runs/detect/train2/weights/best.pt` sendo o segundo modelo mais preciso.
+
+### Baixe o Yolo na sua máquina com o comando
+` pip install ultralytics `
+
+### Por último rode o código abaixo
+```
+from ultralytics import YOLO
+model = YOLO("modelo_escolhido")
+
+results = model.predict('caminho_da_imagem', save=True, imgsz=640)
+results[0].show(); # Mostra a imagem com as bounding boxes de fire e smoke
+
+```
 
 # :bar_chart:Resultados
 Os resultados foram obtidos fazendo dois treinameinos distintos, sendo o segundo realizado com 
@@ -232,5 +245,5 @@ Isso também é crítico, pois a fumaça geralmente precede o fogo.
 # :dart:Conclusão
 A modelo do primeiro treinamento resultados inferiores ao segundo provavelmente em razão do seu dataset que possui muitas imagens duplicadas, proporção de imagens desiguais (mais imagens contendo a classe smoke do a classe fire) e muitos falsos positivos para fire que se confunde com o background. Mesmo assim, o modelo ainda pode ser útil principalmente para detectar fumaça, pois foi a classe que teve o melhor desempenho nas métricas. Sabendo dessas limitações e com alguns ajustes o modelo do treino 1 ainda pode ser bem utilizado.
 
-Já o modelo do segundo treinamento apresentou um desempenho melhor em praticamente todas as métricas especialmente se tratando do classe smoke, o desempenho da classe fire também melhorou consideravelmente mas ainda está apresentando problemas com falsos positivos 
+Já o modelo do segundo treinamento apresentou um desempenho melhor em praticamente todas as métricas, mesmo sendo treinado por um tempo menor e com um número de épocas reduzido. Mais uma vez o desempenho da classe smoke foi o melhor, o desempenho da classe fire também melhorou consideravelmente mas ainda está apresentando problemas com falsos positivos. 
 
