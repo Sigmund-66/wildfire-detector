@@ -221,23 +221,16 @@ resultados = model.train(
 
 ### Interpretação da matriz
 
-+ Classe fire (linha 1):
-81% das previsões como fire foram corretas. 2% das previsões como fire na verdade eram smoke.
-74% das vezes que o modelo deveria prever background, ele errou e previu fire — indicando falsos positivos com fire.
++ Confusão entre fire e background. Em 63% dos casos rotulados como fogo, o modelo predisse "background".
+Isso pode gerar um erro grave, pois ignorar fogo real pode comprometer a detecção precoce.
 
-+ Classe smoke (linha 2):
-77% das previsões como smoke foram corretas.
-3% na verdade eram fire. 26% das vezes que o modelo deveria prever background, ele previu smoke.
++ Confusão entre smoke e background 37% dos casos reais de fumaça foram classificados como fundo.
+Isso também é crítico, pois a fumaça geralmente precede o fogo.
 
-+ Classe background (linha 3):16% das previsões como background eram na verdade fire.
-21% eram smoke e 63% {1 - (0.16 + 0.21)} eram de fato o background.  
-
-O modelo está apresentando muitos falsos positivos para fire principalmente com o background (74%), apesar de ter uma boa precisão. A classe smoke teve o melhor desempenho, porém ainda se confunde um pouco com background(26%).
-
-
++ O modelo está relativamente bom em identificar “smoke”, mas ainda possui dificuldade em distinguir “fire” e “background”.
 
 # :dart:Conclusão
 A modelo do primeiro treinamento resultados inferiores ao segundo provavelmente em razão do seu dataset que possui muitas imagens duplicadas, proporção de imagens desiguais (mais imagens contendo a classe smoke do a classe fire) e muitos falsos positivos para fire que se confunde com o background. Mesmo assim, o modelo ainda pode ser útil principalmente para detectar fumaça, pois foi a classe que teve o melhor desempenho nas métricas. Sabendo dessas limitações e com alguns ajustes o modelo do treino 1 ainda pode ser bem utilizado.
 
-Já o modelo do segundo treinamento apresentou um desempenho melhor em praticamente todas as métricas especialmente se tratando do classe smoke, o desempenho da classe fire também melhorou consideravelmente
+Já o modelo do segundo treinamento apresentou um desempenho melhor em praticamente todas as métricas especialmente se tratando do classe smoke, o desempenho da classe fire também melhorou consideravelmente mas ainda está apresentando problemas com falsos positivos 
 
