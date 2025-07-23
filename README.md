@@ -1,6 +1,5 @@
 # 🔥 🏞️ Modelo de detecção de fogo e fumaça (Wildfire Detect)
-Modelo de detecção de incêndios em florestas 
-
+Modelo de detecção de fogo e fumaça em florestas e outros contextos.
 
 
 # :clipboard:Sobre
@@ -25,11 +24,26 @@ YOLO **(You Only Look Once)**, é um modelo popular de detecção de objetos e s
 
 ### Sobre o Roboflow
 
+O site Roboflow Universe é uma plataforma colaborativa de datasets (conjuntos de dados) voltada para visão computacional. 
+Trata-se de um repositório público onde pesquisadores, desenvolvedores, estudantes e empresas podem:
+
++ Compartilhar datasets anotados (com labels) para tarefas como detecção de objetos, segmentação, classificação, etc.
+
++ Explorar datasets criados por outros usuários.
+
++ Importar datasets diretamente para projetos de machine learning, especialmente com ferramentas como YOLO, TensorFlow, PyTorch, etc.
+
++ Visualizar e manipular datasets (ex: ver bounding boxes, tipos de classes, estatísticas de anotações, etc).
 
 # :pushpin:Objetivo
-Monitorar florestas para detectar incêndios ou focos para adotar estratégias de combate e prevenção.
+Os incêndios florestais têm consequências devastadoras para o meio ambiente, a saúde humana e a economia. 
+Sistemas baseados em visão computacional e inteligência artificial conseguem identificar sinais de fumaça 
+ou chamas em tempo real, por meio de câmeras ou imagens de satélite. A resposta rápida evita que pequenos focos virem grandes incêndios.
+Para isso a ideia de criar um modelo de detecção de objetos para monitorar florestas, detectar incêndios ou focos e adotar estratégias de combate e prevenção
+o mais rapidamente.
 
 # :question:Como usar
+
 
 # :bar_chart:Resultados
 Os resultados foram obtidos fazendo dois treinameinos distintos, sendo o segundo realizado com 
@@ -114,6 +128,12 @@ Esse gráfico é uma curva F1-Confidence gerado após o término do treinamento 
 ### Gráfico curve Precision x Recall
 <img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/9ce5c943-a25c-4b74-8374-71f89960c56e" />
 
+Curva Precision-Recall (PR) gerada após a validação de um modelo YOLOv11 para detecção das classes fire e smoke. Ele fornece uma visão detalhada do equilíbrio entre precisão e revocação (recall) em diferentes thresholds de confiança.
+
++ **Classe smoke:** Melhor curva PR - modelo consegue manter alta precisão mesmo com recall elevado. Excelente desempenho.
++ **Classe fire:** Um pouco mais baixo → o modelo perde precisão mais rapidamente conforme tenta aumentar o recall. Isso pode indicar dificuldade de distinguir o fogo, ou caixas menos precisas.
++ **Desempenho geral:** mAP@0.5 = 0.777 mostra que o modelo tem bom desempenho global, compatível com aplicações reais.
+
 ### Matriz confusão normalizada (gráfico)
 <img width="2250" height="1500" alt="confusion_matrix_normalized" src="https://github.com/user-attachments/assets/e113552a-4ba9-4c1f-9fee-6ab9ed38fadc" />
 
@@ -169,8 +189,54 @@ resultados = model.train(
 
 ```
 
+### Validação - Métricas  
+| Class | Images | Instances  | Box(P) | R     | mAP50 | mAP50-95 |
+|-------|-------:|-----------:|-------:|------:|------:|---------:|
+| all   |  357   |   581      | 0.917  | 0.868 | 0.929 | 0.628    |
+| fire  |  141   |   223      | 0.877  | 0.857 | 0.909 | 0.57     |
+| smoke |  321   |   358      | 0.958  | 0.880 | 0.950 | 0.686    |  
+
+### Gráfico F1 confidence curve
+<img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/c5191c99-6c50-4d01-94b2-13d17409a59b" />
+
++O pico do F1-score geral (azul grosso) ocorre aproximadamente no ponto 0.317 de confiança, com um valor de F1 = 0.73.Isso significa que o melhor equilíbrio entre 
+  precisão e recall é atingido quando o modelo considera apenas detecções com confiança acima de 31.7%.
+
++A curva da classe smoke (laranja) apresenta desempenho superior à de fire (azul claro), mantendo valores de F1 mais altos em toda a faixa de confiança.
++A curva fire tem uma queda mais acentuada em valores altos de confiança, indicando que o modelo se torna excessivamente seletivo e perde recall rapidamente nessa classe.
+
+
+### Gráfico curve Precision x Recall
+<img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/0c4b5b65-b449-4e71-9cc4-33c36cac4357" />
+
+
++ **Classe smoke:** Melhor curva PR - modelo consegue manter alta precisão mesmo com recall elevado. Excelente desempenho.
++ **Classe fire:** Um pouco mais baixo → o modelo perde precisão mais rapidamente conforme tenta aumentar o recall. Isso pode indicar dificuldade de distinguir o fogo, ou caixas menos precisas.
++ **Desempenho geral:** mAP@0.5 = 0.777 mostra que o modelo tem bom desempenho global, compatível com aplicações reais.
+
+### Matriz confusão normalizada (gráfico)
+<img width="2250" height="1500" alt="confusion_matrix_normalized" src="https://github.com/user-attachments/assets/585c33f3-96b3-4b6d-9855-f0487a17da72" />
+
+
+### Interpretação da matriz
+
++ Classe fire (linha 1):
+81% das previsões como fire foram corretas. 2% das previsões como fire na verdade eram smoke.
+74% das vezes que o modelo deveria prever background, ele errou e previu fire — indicando falsos positivos com fire.
+
++ Classe smoke (linha 2):
+77% das previsões como smoke foram corretas.
+3% na verdade eram fire. 26% das vezes que o modelo deveria prever background, ele previu smoke.
+
++ Classe background (linha 3):16% das previsões como background eram na verdade fire.
+21% eram smoke e 63% {1 - (0.16 + 0.21)} eram de fato o background.  
+
+O modelo está apresentando muitos falsos positivos para fire principalmente com o background (74%), apesar de ter uma boa precisão. A classe smoke teve o melhor desempenho, porém ainda se confunde um pouco com background(26%).
+
 
 
 # :dart:Conclusão
+A modelo do primeiro treinamento resultados inferiores ao segundo provavelmente em razão do seu dataset que possui muitas imagens duplicadas, proporção de imagens desiguais (mais imagens contendo a classe smoke do a classe fire) e muitos falsos positivos para fire que se confunde com o background. Mesmo assim, o modelo ainda pode ser útil principalmente para detectar fumaça, pois foi a classe que teve o melhor desempenho nas métricas. Sabendo dessas limitações e com alguns ajustes o modelo do treino 1 ainda pode ser bem utilizado.
 
+Já o modelo do segundo treinamento apresentou um desempenho melhor em praticamente todas as métricas especialmente se tratando do classe smoke, o desempenho da classe fire também melhorou consideravelmente
 
