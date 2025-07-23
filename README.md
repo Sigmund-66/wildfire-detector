@@ -1,4 +1,4 @@
-# 🔥 🏞️ Modelo de detecção de fogo e fumaça (Wildfire Detect)
+# 🔥Modelo de detecção de fogo e fumaça (Wildfire Detect)
 Modelo de detecção de fogo e fumaça em florestas e outros contextos.
 ![val_batch0_pred](https://github.com/user-attachments/assets/7eb2763f-1e73-4847-a614-49ced0dcbc71)
 
