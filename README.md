@@ -98,18 +98,16 @@ O **mAP50-95** também é alto **(57.3%)**, o que mostra bom alinhamento das cai
 
 Esse gráfico é uma curva F1-Confidence gerado após o término do treinamento do modelo e localizada em `runs/detect/train`. Ele mostra como o valor F1-score varia em função do nível de confiança aplicado para filtrar as detecções do modelo.
 
-+O eixo X (Confidence): representa o limiar de confiança utilizado nas predições. Valores variam de 0 a 1.
-Quanto mais alto o limiar, mais exigente o modelo é para considerar uma detecção como válida.
-Quanto mais baixo, mais permissivo (aceita mais detecções, mesmo com baixa confiança).
++O eixo X (Confidence): representa o limiar de confiança utilizado nas predições. Valores variam de 0 a 1.Quanto mais alto o limiar, mais exigente o modelo é para 
+  considerar uma detecção como válida.Quanto mais baixo, mais permissivo (aceita mais detecções, mesmo com baixa confiança).
 
-+O eixo Y (F1): representa o valor do F1-score, que é a média harmônica entre precisão (precision) e revocação (recall).
-Valores mais altos indicam melhor equilíbrio entre precisão e recall.
++O eixo Y (F1): representa o valor do F1-score, que é a média harmônica entre precisão (precision) e revocação (recall).Valores mais altos indicam melhor equilíbrio 
+  entre precisão e recall.
 
-+O pico do F1-score geral (azul grosso) ocorre aproximadamente no ponto 0.317 de confiança, com um valor de F1 = 0.73.
-Isso significa que o melhor equilíbrio entre precisão e recall é atingido quando o modelo considera apenas detecções com confiança acima de 31.7%.
++O pico do F1-score geral (azul grosso) ocorre aproximadamente no ponto 0.317 de confiança, com um valor de F1 = 0.73.Isso significa que o melhor equilíbrio entre 
+  precisão e recall é atingido quando o modelo considera apenas detecções com confiança acima de 31.7%.
 
 +A curva da classe smoke (laranja) apresenta desempenho superior à de fire (azul claro), mantendo valores de F1 mais altos em toda a faixa de confiança.
-
 +A curva fire tem uma queda mais acentuada em valores altos de confiança, indicando que o modelo se torna excessivamente seletivo e perde recall rapidamente nessa classe.
 
 
