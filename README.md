@@ -213,11 +213,11 @@ resultados = model.train(
 ### Gráfico F1 confidence curve
 <img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/c5191c99-6c50-4d01-94b2-13d17409a59b" />
 
-+O pico do F1-score geral (azul grosso) ocorre aproximadamente no ponto 0.317 de confiança, com um valor de F1 = 0.73.Isso significa que o melhor equilíbrio entre 
++ O pico do F1-score geral (azul grosso) ocorre aproximadamente no ponto 0.317 de confiança, com um valor de F1 = 0.73.Isso significa que o melhor equilíbrio entre 
   precisão e recall é atingido quando o modelo considera apenas detecções com confiança acima de 31.7%.
 
-+A curva da classe smoke (laranja) apresenta desempenho superior à de fire (azul claro), mantendo valores de F1 mais altos em toda a faixa de confiança.
-+A curva fire tem uma queda mais acentuada em valores altos de confiança, indicando que o modelo se torna excessivamente seletivo e perde recall rapidamente nessa classe.
++ A curva da classe smoke (laranja) apresenta desempenho superior à de fire (azul claro), mantendo valores de F1 mais altos em toda a faixa de confiança.
++ A curva fire tem uma queda mais acentuada em valores altos de confiança, indicando que o modelo se torna excessivamente seletivo e perde recall rapidamente nessa classe.
 
 
 ### Gráfico curve Precision x Recall
