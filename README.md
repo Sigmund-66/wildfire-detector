@@ -1,6 +1,6 @@
 # 🔥 🏞️ Modelo de detecção de fogo e fumaça (Wildfire Detect)
 Modelo de detecção de fogo e fumaça em florestas e outros contextos.
-
+![val_batch0_pred](https://github.com/user-attachments/assets/7eb2763f-1e73-4847-a614-49ced0dcbc71)
 
 # :clipboard:Sobre
 
@@ -14,7 +14,8 @@ YOLO **(You Only Look Once)**, é um modelo popular de detecção de objetos e s
 + O YOLOv2, lançado em 2016, aprimorou o modelo original incorporando normalização em lote, caixas delimitadoras (anchor boxes) e agrupamentos de dimensões.
 + YOLOv3, lançado em 2018, aprimorou ainda mais o desempenho do modelo usando uma rede de backbone mais eficiente, múltiplas âncoras e agrupamento de pirâmide espacial.
 + O YOLOv4 foi lançado em 2020, introduzindo inovações como aumento de dados Mosaic, um novo cabeçalho de detecção sem âncora e uma nova função de perda.
-+ YOLOv5 melhorou ainda mais o desempenho do modelo e adicionou novos recursos, como otimização de hiperparâmetros, rastreamento de experimentos integrado e exportação automática para formatos de exportação populares.
++ YOLOv5 melhorou ainda mais o desempenho do modelo e adicionou novos recursos, como otimização de hiperparâmetros, rastreamento de experimentos integrado e exportação automática para formatos de exportação popul![val_batch0_labels](https://github.com/user-attachments/assets/c5c480c0-edac-48d6-9829-9bfd57682cbf)
+ares.
 + YOLOv6 foi tornado de código aberto pela Meituan em 2022 e é usado em muitos dos robôs de entrega autônomos da empresa.
 + O YOLOv7 adicionou tarefas adicionais, como estimativa de pose no conjunto de dados de pontos-chave COCO.
 +YOLOv8 lançado em 2023 pela Ultralytics, introduziu novos recursos e melhorias para desempenho, flexibilidade e eficiência aprimorados, oferecendo suporte a uma gama completa de tarefas de visão de IA.
