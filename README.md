@@ -43,7 +43,8 @@ Para isso a ideia de criar um modelo de detecção de objetos para monitorar flo
 o mais rapidamente.
 
 # :question:Como usar
-
+### Escolha entre os dois modelos localizados em:
++ 
 
 # :bar_chart:Resultados
 Os resultados foram obtidos fazendo dois treinameinos distintos, sendo o segundo realizado com 
