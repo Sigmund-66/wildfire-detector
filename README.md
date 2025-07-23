@@ -119,15 +119,15 @@ Esse gráfico é uma curva F1-Confidence gerado após o término do treinamento 
 
 ### Interpretação da matriz
 
-+Classe fire (linha 1):
++ Classe fire (linha 1):
 81% das previsões como fire foram corretas. 2% das previsões como fire na verdade eram smoke.
 74% das vezes que o modelo deveria prever background, ele errou e previu fire — indicando falsos positivos com fire.
 
-+Classe smoke (linha 2):
++ Classe smoke (linha 2):
 77% das previsões como smoke foram corretas.
 3% na verdade eram fire. 26% das vezes que o modelo deveria prever background, ele previu smoke.
 
-+Classe background (linha 3):16% das previsões como background eram na verdade fire.
++ Classe background (linha 3):16% das previsões como background eram na verdade fire.
 21% eram smoke e 63% {1 - (0.16 + 0.21)} eram de fato o background.  
 
 O modelo está apresentando muitos falsos positivos para fire principalmente com o background (74%), apesar de ter uma boa precisão. A classe smoke teve o melhor desempenho, porém ainda se confunde um pouco com background(26%).
